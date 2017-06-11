@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Skip to content
 This repository
 Search
@@ -39,6 +40,8 @@ This is not legal advice. Learn more about repository licenses.
 1 contributor
 RawBlameHistory     
 675 lines (553 sloc)  34.3 KB
+=======
+>>>>>>> 0885b6cc79aea99c6cddbc7c11b38c096c5a4959
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -713,5 +716,8 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <http://www.gnu.org/philosophy/why-not-lgpl.html>.
+<<<<<<< HEAD
 Contact GitHub API Training Shop Blog About
 © 2017 GitHub, Inc. Terms Privacy Security Status Help
+=======
+>>>>>>> 0885b6cc79aea99c6cddbc7c11b38c096c5a4959
