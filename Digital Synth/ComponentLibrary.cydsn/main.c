@@ -9,17 +9,74 @@
  *
  * ========================================
 */
-#include "project.h"
+#include <project.h>
+#include "stdio.h"
+
+#define USBFS_DEVICE    (0u)
+
+/* The buffer size is equal to the maximum packet size of the IN and OUT bulk
+* endpoints.
+*/
+#define USBUART_BUFFER_SIZE (64u)
+#define LINE_STR_LENGTH     (20u)
+
+void get_switch_matrix(uint32_t *switch_bits)
+{
+    // Cast for easy array-like access
+    uint8_t *switch_bytes = (uint8_t*)switch_bits;
+    switch_bytes[0] = Switch_Reg_0_Read();
+    switch_bytes[1] = Switch_Reg_1_Read();
+    switch_bytes[2] = Switch_Reg_2_Read();
+    switch_bytes[3] = Switch_Reg_3_Read();
+}
 
 int main(void)
 {
+    uint16 count;
+    uint8 buffer[USBUART_BUFFER_SIZE];
+    
+#if (CY_PSOC3 || CY_PSOC5LP)
+    uint8 state;
+    char8 lineStr[LINE_STR_LENGTH];
+#endif
+    
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    /* Start USBFS operation with 5-V operation. */
+    USBUART_Start(USBFS_DEVICE, USBUART_5V_OPERATION);
 
     for(;;)
     {
-        /* Place your application code here. */
+        /* Host can send double SET_INTERFACE request. */
+        if (0u != USBUART_IsConfigurationChanged())
+        {
+            /* Initialize IN endpoints when device is configured. */
+            if (0u != USBUART_GetConfiguration())
+            {
+                /* Enumeration is done, enable OUT endpoint to receive data 
+                 * from host. */
+                USBUART_CDC_Init();
+            }
+        }
+        
+        /* Service USB CDC when device is configured. */
+        if (0u != USBUART_GetConfiguration())
+        {
+            /* Wait until component is ready to send data to host. */
+            while (0u == USBUART_CDCIsReady());
+            
+            // Read the switch state
+            uint32_t switch_bits;
+            get_switch_matrix(&switch_bits);
+            
+            // Print the bits out to the console
+            for(int i = 0; i < 32; i++)
+            {
+                buffer[i] = (switch_bits & (1 << i))? '1' : '0';   
+            }
+            buffer[32] = 0;
+            USBUART_PutData(buffer, count);
+        }
     }
 }
 
