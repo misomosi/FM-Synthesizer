@@ -1865,9 +1865,9 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Switch_Reg_3</name>
+      <name>Switch_Reg_0</name>
       <description>No description available</description>
-      <baseAddress>0x40006468</baseAddress>
+      <baseAddress>0x4000646A</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x0</size>
@@ -1875,7 +1875,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>Switch_Reg_3_STATUS_REG</name>
+          <name>Switch_Reg_0_STATUS_REG</name>
           <description>No description available</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
@@ -1884,7 +1884,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>Switch_Reg_3_MASK_REG</name>
+          <name>Switch_Reg_0_MASK_REG</name>
           <description>No description available</description>
           <addressOffset>0x20</addressOffset>
           <size>8</size>
@@ -1893,7 +1893,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>Switch_Reg_3_STATUS_AUX_CTL_REG</name>
+          <name>Switch_Reg_0_STATUS_AUX_CTL_REG</name>
           <description>No description available</description>
           <addressOffset>0x30</addressOffset>
           <size>8</size>
@@ -2020,9 +2020,9 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Switch_Reg_0</name>
+      <name>Switch_Reg_3</name>
       <description>No description available</description>
-      <baseAddress>0x4000646A</baseAddress>
+      <baseAddress>0x40006468</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x0</size>
@@ -2030,7 +2030,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>Switch_Reg_0_STATUS_REG</name>
+          <name>Switch_Reg_3_STATUS_REG</name>
           <description>No description available</description>
           <addressOffset>0x0</addressOffset>
           <size>8</size>
@@ -2039,7 +2039,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>Switch_Reg_0_MASK_REG</name>
+          <name>Switch_Reg_3_MASK_REG</name>
           <description>No description available</description>
           <addressOffset>0x20</addressOffset>
           <size>8</size>
@@ -2048,7 +2048,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>Switch_Reg_0_STATUS_AUX_CTL_REG</name>
+          <name>Switch_Reg_3_STATUS_AUX_CTL_REG</name>
           <description>No description available</description>
           <addressOffset>0x30</addressOffset>
           <size>8</size>

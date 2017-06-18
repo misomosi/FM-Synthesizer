@@ -74,8 +74,9 @@ int main(void)
             {
                 buffer[i] = (switch_bits & (1 << i))? '1' : '0';   
             }
-            buffer[32] = 0;
-            USBUART_PutData(buffer, count);
+            buffer[32] = '\r';
+            buffer[33] = '\n';
+            USBUART_PutData(buffer, 33);
         }
     }
 }
