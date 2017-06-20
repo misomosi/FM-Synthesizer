@@ -32,13 +32,7 @@ void get_switch_matrix(uint32_t *switch_bits)
 
 int main(void)
 {
-    uint16 count;
-    uint8 buffer[USBUART_BUFFER_SIZE];
-    
-#if (CY_PSOC3 || CY_PSOC5LP)
-    uint8 state;
-    char8 lineStr[LINE_STR_LENGTH];
-#endif
+    char buffer[USBUART_BUFFER_SIZE];
     
     CyGlobalIntEnable; /* Enable global interrupts. */
 
@@ -61,9 +55,11 @@ int main(void)
         
         /* Service USB CDC when device is configured. */
         if (0u != USBUART_GetConfiguration())
-        {
+        {            
             /* Wait until component is ready to send data to host. */
-            while (0u == USBUART_CDCIsReady());
+            while (0u == USBUART_CDCIsReady())
+            {
+            }
             
             // Read the switch state
             uint32_t switch_bits;
@@ -75,8 +71,8 @@ int main(void)
                 buffer[i] = (switch_bits & (1 << i))? '1' : '0';   
             }
             buffer[32] = '\r';
-            buffer[33] = '\n';
-            USBUART_PutData(buffer, 33);
+            buffer[33] = 0;
+            USBUART_PutString(buffer);
         }
     }
 }
