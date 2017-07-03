@@ -302,6 +302,8 @@
     </Group>
     <Group key="Pin">
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Keyboard_Row" />
+      <Data key="beca5e2d-f70f-4900-a4db-7eca1ed3126e/8b77a6c4-10a0-4390-971c-672353e2a49c" value="USBUART_Dm" />
+      <Data key="beca5e2d-f70f-4900-a4db-7eca1ed3126e/618a72fc-5ddd-4df5-958f-a3d55102db42" value="USBUART_Dp" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Keyboard_Column" />
     </Group>
   </Group>
@@ -3417,16 +3419,16 @@
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="4,0" />
+        <Data key="Port Format" value="3,0" />
       </Group>
       <Group key="1">
-        <Data key="Port Format" value="4,1" />
+        <Data key="Port Format" value="3,1" />
       </Group>
       <Group key="2">
-        <Data key="Port Format" value="4,2" />
+        <Data key="Port Format" value="3,2" />
       </Group>
       <Group key="3">
-        <Data key="Port Format" value="4,3" />
+        <Data key="Port Format" value="3,3" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />

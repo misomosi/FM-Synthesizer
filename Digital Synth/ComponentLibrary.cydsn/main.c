@@ -22,12 +22,7 @@
 
 void get_switch_matrix(uint32_t *switch_bits)
 {
-    // Cast for easy array-like access
-    uint8_t *switch_bytes = (uint8_t*)switch_bits;
-    switch_bytes[0] = Switch_Reg_0_Read();
-    switch_bytes[1] = Switch_Reg_1_Read();
-    switch_bytes[2] = Switch_Reg_2_Read();
-    switch_bytes[3] = Switch_Reg_3_Read();
+    Software_Key_Matrix_Driver_1_Read(switch_bits);
 }
 
 int main(void)

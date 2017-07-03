@@ -31,7 +31,7 @@ module Key_Matrix_Driver_v1_0 (
         reg changed_reg;
 
         // De-sequence the count as the output. It only has 1 pin high at a time
-        assign Column_Output = ~(4'b0001 << cnt); // Hopefully, this optimizes to a LUT instead of SHIFT8 bullshit
+        assign Column_Output = ~(4'b1000 >> cnt); // Hopefully, this optimizes to a LUT instead of SHIFT8 bullshit
 
         // Changed interrupt only goes high after all rows are polled
         assign Changed = (cnt == 2'b00) && changed_reg;
@@ -97,7 +97,7 @@ module Key_Matrix_Driver_v1_0 (
         reg [1:0] cnt;  // Current column
 
         // De-sequence the count as the output. It only has 1 pin high at a time
-        assign Column_Output = ~(4'b0001 << cnt); // Hopefully, this optimizes to a LUT instead of SHIFT8 
+        assign Column_Output = ~(4'b1000 >> cnt); // Hopefully, this optimizes to a LUT instead of SHIFT8 
 
         always @ (posedge Clock)
         begin
