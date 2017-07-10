@@ -20,6 +20,12 @@ int main(void)
 
     /* Start the USBFS interface */
     USB_Start(DEVICE, USB_DWR_VDDD_OPERATION);
+    
+    Slope_Reg_0_Write(1);
+    
+    VDAC8_1_Start();
+    
+    VDAC8_1_SetValue(0x80);
 
     for(;;)
     {
