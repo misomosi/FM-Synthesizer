@@ -60,22 +60,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cydisabledsheets.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_0.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_0.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Switch_Reg_3.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Column_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Column.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Column.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Row_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Row.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Keyboard_Row.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_2.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC5\cm3gcc.ld</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC5\Cm3RealView.scat</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Cm3Start.c</File>
@@ -141,6 +131,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Software_Key_Matrix_Driver_1_Column_Control_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Software_Key_Matrix_Driver_1_Row_Status.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Software_Key_Matrix_Driver_1_Row_Status.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Status_Reg_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Status_Reg_1.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\duhpr\Development\Digital_Synthesizer\Digital Synth\ComponentLibrary.cydsn\Software_Key_Matrix_Driver\API">

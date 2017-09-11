@@ -65,10 +65,11 @@ int main(void)
             {
                 buffer[i] = (switch_bits & (1 << i))? '1' : '0';   
             }
-            buffer[32] = '\r';
-            buffer[33] = 0;
+            
+            sprintf(&buffer[32], "__%x\r", Status_Reg_1_Read());
             USBUART_PutString(buffer);
         }
+        CyDelay(10);
     }
 }
 
