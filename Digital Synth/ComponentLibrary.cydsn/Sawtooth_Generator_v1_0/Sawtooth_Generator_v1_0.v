@@ -19,14 +19,17 @@ module Adder_Hard_IN_Hard_OUT (
     clk,
     slope,
     carry_in,
-    carry_out
+    carry_out,
+    ready
 );
 
+    parameter [7:0] Width = 8'd8;
     output reg [7:0] value;
 	input wire clk;
 	input wire [7:0] slope;
     input wire carry_in;
     output wire carry_out;
+    output wire ready;
     
     localparam STATE_ADD      = 2'b00;
     localparam STATE_LATCH_PO = 2'b01;
@@ -34,6 +37,7 @@ module Adder_Hard_IN_Hard_OUT (
     reg state;
     wire [7:0] po;
     
+    assign ready = state == STATE_ADD;
     always @(posedge clk)
     begin
         case (state)
@@ -159,6 +163,7 @@ module Adder_Hard_IN_Reg_OUT (
     carry_out
     );
     
+    parameter [7:0] Width = 8'd8;
 	input wire clk;
 	input wire [7:0] slope;
     input wire carry_in;
@@ -274,6 +279,7 @@ module Adder_Reg_IN_Hard_OUT (
     carry_out
     );
     
+    parameter [7:0] Width = 8'd8;
     input wire clk;
 	output wire [7:0] value;
     input wire carry_in;
@@ -388,6 +394,7 @@ module Adder_Reg_IN_Reg_OUT (
     carry_out
     );
     
+    parameter [7:0] Width = 8'd8;
     input wire clk;
     input wire carry_in;
     output wire carry_out;
@@ -499,17 +506,19 @@ endmodule
 module Sawtooth_Generator_v1_0 (
 	value,
 	clk,
-	slope
+	slope,
+    ready
 );
 
 	parameter [7:0] Width = 8'd8;
     output wire [(Width-1):0] value;
 	input wire clk;
 	input wire [(Width-1):0] slope;
+    output wire ready;
     
     wire carry_0;
 
-    Adder_Hard_IN_Hard_OUT add_0(.value(value[7:0]), .clk(clk), .slope(slope[7:0]), .carry_in(1'b0), .carry_out(carry_0));
+    Adder_Hard_IN_Hard_OUT #(.Width(Width)) add_0(.value(value[(Width-1):0]), .clk(clk), .slope(slope[(Width-1):0]), .carry_in(1'b0), .carry_out(carry_0), .ready(ready));
     
 //`#end` -- edit above this line, do not edit this line
 endmodule

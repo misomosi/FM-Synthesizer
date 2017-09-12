@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+<deviceData version="1"
+  xmlns="http://cypress.com/xsd/cydevicedata"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://cypress.com/xsd/cydevicedata cydevicedata.xsd">
+
+  <block name="`$INSTANCE_NAME`" desc="" visible="true">
+
+    <block name="UDB" desc="UDB Registers" visible="true">
+        <register name="VALUE" address="`$INSTANCE_NAME`_add_0_add_pi_po__A0_REG" bitWidth="8" desc="Accumulator" />
+        <register name="SLOPE" address="`$INSTANCE_NAME`_add_0_add_pi_po_PI__STATUS_REG" bitWidth="8" desc="Slope" />
+    </block>
+    
+  </block>
+</deviceData>
